@@ -8,12 +8,17 @@
    ======================================== */
 :root {
     /* Primary Colors */
-    --color-primary: #1a3a2f;        /* Dark Green */
-    --color-secondary: #2d5a4a;      /* Teal Green */
-    --color-tertiary: #1a2d3d;       /* Deep Blue */
-    --color-dark: #141c1f;           /* Dark Gray */
-    --color-accent: #d4a03c;         /* Mustard Yellow */
-    
+    --color-primary: #1a3a2f;
+    /* Dark Green */
+    --color-secondary: #2d5a4a;
+    /* Teal Green */
+    --color-tertiary: #1a2d3d;
+    /* Deep Blue */
+    --color-dark: #141c1f;
+    /* Dark Gray */
+    --color-accent: #d4a03c;
+    /* Mustard Yellow */
+
     /* Neutral Colors */
     --color-white: #ffffff;
     --color-light: #f5f7f6;
@@ -23,16 +28,16 @@
     --color-gray-400: #6b7a73;
     --color-gray-500: #4a5750;
     --color-black: #0a0f0d;
-    
+
     /* Functional Colors */
     --color-success: #3a7d5c;
     --color-warning: #d4a03c;
     --color-danger: #8b3a3a;
-    
+
     /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-display: 'Playfair Display', Georgia, serif;
-    
+
     /* Spacing */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
@@ -42,7 +47,7 @@
     --space-2xl: 3rem;
     --space-3xl: 4rem;
     --space-4xl: 6rem;
-    
+
     /* Border Radius */
     --radius-sm: 4px;
     --radius-md: 8px;
@@ -50,18 +55,18 @@
     --radius-xl: 16px;
     --radius-2xl: 24px;
     --radius-full: 9999px;
-    
+
     /* Shadows */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
-    
+
     /* Transitions */
     --transition-fast: 150ms ease;
     --transition-base: 300ms ease;
     --transition-slow: 500ms ease;
-    
+
     /* Z-Index */
     --z-dropdown: 100;
     --z-sticky: 200;
@@ -73,7 +78,9 @@
 /* ========================================
    RESET & BASE STYLES
    ======================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -107,7 +114,8 @@ a {
     transition: color var(--transition-fast);
 }
 
-ul, ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -279,6 +287,14 @@ button {
     width: 100%;
 }
 
+.nav-link.active {
+    color: var(--color-accent);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
 .nav-toggle {
     display: none;
     width: 40px;
@@ -369,16 +385,21 @@ button {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(100vh) rotate(0deg);
         opacity: 0;
     }
+
     10% {
         opacity: 0.3;
     }
+
     90% {
         opacity: 0.3;
     }
+
     100% {
         transform: translateY(-100px) rotate(720deg);
         opacity: 0;
@@ -475,10 +496,13 @@ button {
 }
 
 @keyframes scroll {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
     }
+
     50% {
         opacity: 0.5;
         transform: translateX(-50%) translateY(12px);
@@ -787,6 +811,7 @@ button {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -892,13 +917,14 @@ button {
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
     border-radius: var(--radius-xl);
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(212, 160, 60, 0.2);
-    box-shadow: 
+    box-shadow:
         0 0 30px rgba(212, 160, 60, 0.15),
         0 10px 40px rgba(0, 0, 0, 0.5),
         inset 0 0 20px rgba(212, 160, 60, 0.08);
@@ -906,7 +932,7 @@ button {
 }
 
 .video-wrapper:hover {
-    box-shadow: 
+    box-shadow:
         0 0 50px rgba(212, 160, 60, 0.25),
         0 15px 50px rgba(0, 0, 0, 0.6),
         inset 0 0 30px rgba(212, 160, 60, 0.12);
@@ -1305,9 +1331,12 @@ button {
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 0 0 rgba(212, 160, 60, 0.4);
     }
+
     50% {
         box-shadow: 0 0 0 10px rgba(212, 160, 60, 0);
     }
@@ -1609,52 +1638,52 @@ button {
     .about-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .about-sidebar {
         flex-direction: row;
     }
-    
+
     .about-card {
         flex: 1;
     }
-    
+
     .themes-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .world-card {
         grid-template-columns: 1fr;
     }
-    
+
     .world-visual {
         order: -1;
     }
-    
+
     .gameplay-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .elements-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .week-details {
         grid-template-columns: 1fr;
     }
-    
+
     .progress-phases {
         flex-wrap: wrap;
         gap: var(--space-md);
     }
-    
+
     .phase {
         flex: 0 0 calc(25% - var(--space-md));
     }
-    
+
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1677,114 +1706,114 @@ button {
         transition: right var(--transition-base);
         box-shadow: var(--shadow-xl);
     }
-    
+
     .nav-menu.active {
         right: 0;
     }
-    
+
     .nav-toggle {
         display: block;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .btn {
         width: 100%;
         max-width: 280px;
     }
-    
+
     .about-sidebar {
         flex-direction: column;
     }
-    
+
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .timeline-line {
         left: 20px;
     }
-    
+
     .story-card {
         padding-left: 60px;
     }
-    
+
     .story-marker {
         left: 0;
         width: 36px;
         height: 36px;
     }
-    
+
     .themes-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .tabs-nav {
         gap: var(--space-xs);
     }
-    
+
     .tab-btn {
         padding: var(--space-sm) var(--space-md);
         font-size: 0.85rem;
     }
-    
+
     .gameplay-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .week-header {
         padding: var(--space-md);
         gap: var(--space-md);
     }
-    
+
     .week-number {
         width: 40px;
         height: 40px;
         font-size: 1rem;
     }
-    
+
     .week-title-group h3 {
         font-size: 1rem;
     }
-    
+
     .week-details {
         padding: var(--space-md);
     }
-    
+
     .progress-phases {
         flex-wrap: wrap;
     }
-    
+
     .phase {
         flex: 0 0 calc(50% - var(--space-md));
     }
-    
+
     .progress-stats {
         grid-template-columns: 1fr;
     }
-    
+
     .gallery-grid {
         grid-template-columns: 1fr;
         grid-auto-rows: 180px;
     }
-    
+
     .gallery-item.large {
         grid-column: span 1;
         grid-row: span 1;
     }
-    
+
     .team-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: var(--space-2xl);
     }
-    
+
     .footer-info {
         flex-direction: column;
         gap: var(--space-xl);
@@ -1796,27 +1825,27 @@ button {
     html {
         font-size: 14px;
     }
-    
+
     .container {
         padding: 0 var(--space-md);
     }
-    
+
     .section {
         padding: var(--space-3xl) 0;
     }
-    
+
     .hero-title {
         letter-spacing: 0.1em;
     }
-    
+
     .features-grid {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .phase {
         flex: 0 0 100%;
     }
-    
+
     .phase-name {
         font-size: 0.7rem;
     }

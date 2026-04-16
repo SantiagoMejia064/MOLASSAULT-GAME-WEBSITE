@@ -60,7 +60,7 @@ function initNavigation() {
     // Active link highlight on scroll
     const sections = document.querySelectorAll('section[id]');
     
-    window.addEventListener('scroll', () => {
+    const updateActiveLink = () => {
         const scrollY = window.pageYOffset;
         
         sections.forEach(section => {
@@ -69,12 +69,17 @@ function initNavigation() {
             const sectionId = section.getAttribute('id');
             const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
             
-            if (navLink && scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                 navLinks.forEach(link => link.classList.remove('active'));
-                navLink.classList.add('active');
+                if (navLink) {
+                    navLink.classList.add('active');
+                }
             }
         });
-    });
+    };
+    
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink(); // Call on page load
 }
 
 // ========================================
