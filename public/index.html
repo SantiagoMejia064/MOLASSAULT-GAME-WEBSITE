@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molassault - Desarrollo de Videojuego | Proyecto Universitario</title>
+    <meta name="description" content="Documentación del proceso de desarrollo de Molassault, un videojuego narrativo de aventura en tercera persona.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-text">MOLASSAULT</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">Sobre el Juego</a></li>
+                <li><a href="#story" class="nav-link">Historia</a></li>
+                <li><a href="#world" class="nav-link">Mundo</a></li>
+                <li><a href="#gameplay" class="nav-link">Gameplay</a></li>
+                <li><a href="#progress" class="nav-link">Avances</a></li>
+                <li><a href="#gallery" class="nav-link">Galería</a></li>
+                <li><a href="#team" class="nav-link">Equipo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         HERO SECTION
+    ======================================== -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <span class="hero-badge">Proyecto Universitario 2026</span>
+            <h1 class="hero-title">MOLASSAULT</h1>
+            <p class="hero-subtitle">Desarrollo de Videojuego Narrativo</p>
+            <p class="hero-tagline">"En medio del desastre, la verdad emerge como la melaza: lenta, oscura e inevitable."</p>
+            <div class="hero-buttons">
+                <a href="#progress" class="btn btn-primary">Ver Avances</a>
+                <a href="#about" class="btn btn-secondary">Conocer el Proyecto</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Desliza para explorar</span>
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ABOUT SECTION
+    ======================================== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">El Videojuego</span>
+                <h2 class="section-title">Sobre Molassault</h2>
+                <p class="section-subtitle">Una aventura narrativa que explora la amistad, la verdad y las consecuencias de la negligencia</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-main">
+                    <div class="about-card about-description">
+                        <h3>¿Qué es Molassault?</h3>
+                        <p>Molassault es un videojuego de aventura narrativa en tercera persona (3D) que combina exploración, parkour suave, puzzles ambientales y una historia cinematográfica profunda. El jugador asume el rol de Nico, un joven que debe atravesar su pueblo devastado para rescatar a su mejor amigo Tomi tras el colapso catastrófico de un tanque industrial de melaza.</p>
+                    </div>
+                    
+                    <div class="about-card about-synopsis">
+                        <h3>Sinopsis</h3>
+                        <p>Cuando una ola masiva de melaza inunda las calles de un pequeño pueblo industrial, Nico se ve obligado a emprender una carrera contra el tiempo. Mientras escala tejados, atraviesa fábricas abandonadas y supera obstáculos mortales, descubre que el desastre no fue un simple accidente: hay señales de negligencia corporativa y un intento sistemático de ocultar la verdad. Entre escombros y secretos, Nico deberá decidir qué es más importante: la seguridad o la justicia.</p>
+                    </div>
+                </div>
+                
+                <div class="about-sidebar">
+                    <div class="about-card about-specs">
+                        <h3>Especificaciones</h3>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-label">Género</span>
+                                <span class="spec-value">Aventura Narrativa 3D</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Perspectiva</span>
+                                <span class="spec-value">Tercera Persona</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Plataforma</span>
+                                <span class="spec-value">PC (Windows)</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Clasificación</span>
+                                <span class="spec-value">+10 años</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Motor</span>
+                                <span class="spec-value">Unity</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-card about-features">
+                        <h3>Propuesta Jugable</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon">🔍</div>
+                                <span>Exploración</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🏃</div>
+                                <span>Parkour Suave</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🧩</div>
+                                <span>Puzzles</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">⚡</div>
+                                <span>Obstáculos</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">💬</div>
+                                <span>Decisiones</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">📖</div>
+                                <span>Narrativa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================================
+         STORY SECTION
+    ======================================== -->
+    <section class="section story" id="story">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Narrativa</span>
+                <h2 class="section-title">Historia del Juego</h2>
+                <p class="section-subtitle">Una travesía emocional a través del desastre, la amistad y la búsqueda de la verdad</p>
+            </div>
+            
+            <div class="story-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="story-card" data-aos="fade-right">
+                    <div class="story-marker">
+                        <span>I</span>
+                    </div>
+                    <div class="story-content">
+                        <span class="story-phase">Inicio</span>
+                        <h3>El Colapso</h3>
+                        <p>Un día aparentemente normal se transforma en pesadilla cuando el enorme tanque de melaza de la compañía industrial local colapsa sin previo aviso. Una ola viscosa y letal inunda las calles del North End, atrapando a cientos de habitantes. Nico, separado de su mejor amigo Tomi durante el caos inicial, escucha sus gritos de auxilio antes de que la comunicación se corte abruptamente.</p>
+                    </div>
+                </div>
+                
+                <div class="story-card" data-aos="fade-left">
+                    <div class="story-marker">
+                        <span>II</span>
+                    </div>
+                    <div class="story-content">
+                        <span class="story-phase">Nudo</span>
+                        <h3>El Descubrimiento</h3>
+                        <p>Mientras Nico atraviesa tejados destruidos, fábricas abandonadas y zonas inundadas, comienza a encontrar pistas perturbadoras: documentos ocultos, testimonios de trabajadores y evidencias de inspecciones ignoradas. El desastre no fue un accidente impredecible; fue el resultado de años de negligencia corporativa y corrupción local. Alguien sabía que esto podía pasar y eligió no actuar.</p>
+                    </div>
+                </div>
+                
+                <div class="story-card" data-aos="fade-right">
+                    <div class="story-marker">
+                        <span>III</span>
+                    </div>
+                    <div class="story-content">
+                        <span class="story-phase">Desenlace</span>
+                        <h3>La Verdad</h3>
+                        <p>Al final de su travesía, Nico debe tomar una decisión crucial: ¿Exponer la verdad y arriesgar todo por la justicia, o proteger lo que queda de su comunidad y seguir adelante? El rescate de Tomi se convierte en algo más grande que él mismo, transformándose en un símbolo de esperanza y resistencia ante la corrupción. La amistad, la culpa y la madurez definen el destino de Nico.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="story-themes">
+                <h3>Temas Centrales</h3>
+                <div class="themes-grid">
+                    <div class="theme-card">
+                        <div class="theme-icon">❤️</div>
+                        <h4>Amistad</h4>
+                        <p>El vínculo inquebrantable entre Nico y Tomi impulsa toda la narrativa</p>
+                    </div>
+                    <div class="theme-card">
+                        <div class="theme-icon">⚖️</div>
+                        <h4>Verdad</h4>
+                        <p>La búsqueda de respuestas en medio del encubrimiento corporativo</p>
+                    </div>
+                    <div class="theme-card">
+                        <div class="theme-icon">💔</div>
+                        <h4>Culpa</h4>
+                        <p>El peso de las decisiones y la responsabilidad personal</p>
+                    </div>
+                    <div class="theme-card">
+                        <div class="theme-icon">🌱</div>
+                        <h4>Madurez</h4>
+                        <p>El crecimiento forzado ante circunstancias extremas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         WORLD SECTION
+    ======================================== -->
+    <section class="section world" id="world">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Escenarios</span>
+                <h2 class="section-title">Mundo del Juego</h2>
+                <p class="section-subtitle">Explora los ambientes devastados de un pueblo industrial en crisis</p>
+            </div>
+            
+            <div class="world-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="northend">North End</button>
+                    <button class="tab-btn" data-tab="factories">Fábricas</button>
+                    <button class="tab-btn" data-tab="rooftops">Tejados</button>
+                    <button class="tab-btn" data-tab="escape">Zona de Fuga</button>
+                </div>
+                
+                <div class="tabs-content">
+                    <div class="tab-panel active" id="northend">
+                        <div class="world-card">
+                            <div class="world-visual">
+                                <div class="world-placeholder">
+                                    <img src="/img/North end.jpeg" alt="">
+                                </div>
+                            </div>
+                            <div class="world-info">
+                                <h3>North End - Barrio Residencial</h3>
+                                <p>El corazón del pueblo, ahora devastado por la melaza. Calles que alguna vez fueron hogar de familias trabajadoras ahora yacen bajo una capa viscosa y mortal. Casas de madera parcialmente destruidas, tiendas abandonadas y vehículos atrapados crean un laberinto de obstáculos y oportunidades de exploración.</p>
+                                <ul class="world-features">
+                                    <li>Calles inundadas con niveles variables de melaza</li>
+                                    <li>Edificios accesibles para exploración vertical</li>
+                                    <li>Pistas ocultas en comercios y hogares</li>
+                                    <li>NPCs atrapados que necesitan ayuda</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="factories">
+                        <div class="world-card">
+                            <div class="world-visual">
+                                <div class="world-placeholder">
+                                    <img src="/img/fabricas.jpeg" alt="" class ="">
+                                </div>
+                            </div>
+                            <div class="world-info">
+                                <h3>Bodegas y Fábricas</h3>
+                                <p>El distrito industrial donde todo comenzó. Enormes estructuras metálicas, maquinaria abandonada y documentos comprometedores esperan ser descubiertos. Aquí, entre tuberías rotas y tanques colapsados, Nico encuentra las primeras evidencias de negligencia corporativa.</p>
+                                <ul class="world-features">
+                                    <li>Maquinaria industrial como plataformas de parkour</li>
+                                    <li>Oficinas con documentos y pistas cruciales</li>
+                                    <li>Hazards eléctricos y estructuras inestables</li>
+                                    <li>Puzzles basados en mecánica industrial</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="rooftops">
+                        <div class="world-card">
+                            <div class="world-visual">
+                                <div class="world-placeholder">
+                                    <span>Vertical Routes</span>
+                                </div>
+                            </div>
+                            <div class="world-info">
+                                <h3>Tejados y Rutas Verticales</h3>
+                                <p>Cuando el suelo se vuelve intransitable, el cielo se convierte en el camino. Los tejados del pueblo ofrecen rutas alternativas llenas de saltos precisos, cornisas estrechas y cables de electricidad. Desde las alturas, Nico puede planificar su ruta y observar la magnitud del desastre.</p>
+                                <ul class="world-features">
+                                    <li>Secuencias de parkour desafiantes</li>
+                                    <li>Vistas panorámicas del desastre</li>
+                                    <li>Puntos de observación estratégicos</li>
+                                    <li>Coleccionables en ubicaciones difíciles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="escape">
+                        <div class="world-card">
+                            <div class="world-visual">
+                                <div class="world-placeholder">
+                                    <span>Escape Zone</span>
+                                </div>
+                            </div>
+                            <div class="world-info">
+                                <h3>Zona de Fuga</h3>
+                                <p>El área donde Tomi fue visto por última vez. Una sección del pueblo especialmente afectada donde la melaza alcanzó su nivel más alto. Estructuras colapsadas, vehículos de emergencia abandonados y la tensión de estar tan cerca del objetivo crean el clímax ambiental del juego.</p>
+                                <ul class="world-features">
+                                    <li>Máxima concentración de obstáculos</li>
+                                    <li>Decisiones narrativas cruciales</li>
+                                    <li>Encuentros finales con personajes clave</li>
+                                    <li>Revelaciones sobre el encubrimiento</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         GAMEPLAY SECTION
+    ======================================== -->
+    <section class="section gameplay" id="gameplay">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Mecánicas</span>
+                <h2 class="section-title">Gameplay y Experiencia</h2>
+                <p class="section-subtitle">Descubre cómo se juega Molassault y qué hace única esta experiencia</p>
+            </div>
+            
+            <div class="gameplay-notice">
+                <p><strong>Nota:</strong> Molassault no es un juego centrado en combate. La experiencia se enfoca en exploración, narrativa y supervivencia ambiental.</p>
+            </div>
+            
+            <div class="gameplay-grid">
+                <div class="gameplay-card">
+                    <div class="gameplay-icon">🎯</div>
+                    <h3>Rescatar a Tomi</h3>
+                    <p>Tu objetivo principal es atravesar el pueblo devastado para encontrar y rescatar a tu mejor amigo antes de que sea demasiado tarde.</p>
+                </div>
+                
+                <div class="gameplay-card">
+                    <div class="gameplay-icon">🔎</div>
+                    <h3>Recolectar Pistas</h3>
+                    <p>Encuentra documentos, grabaciones y testimonios que revelan la verdad detrás del desastre y el encubrimiento corporativo.</p>
+                </div>
+                
+                <div class="gameplay-card">
+                    <div class="gameplay-icon">🏃‍♂️</div>
+                    <h3>Superar Obstáculos</h3>
+                    <p>Escala edificios, salta entre tejados, atraviesa estructuras inestables y navega por zonas inundadas de melaza.</p>
+                </div>
+                
+                <div class="gameplay-card">
+                    <div class="gameplay-icon">🧠</div>
+                    <h3>Resolver Puzzles</h3>
+                    <p>Enfrenta puzzles ambientales que requieren observación, lógica y uso creativo del entorno para progresar.</p>
+                </div>
+                
+                <div class="gameplay-card">
+                    <div class="gameplay-icon">⚖️</div>
+                    <h3>Tomar Decisiones</h3>
+                    <p>Elige cómo interactuar con supervivientes, qué pistas perseguir y cómo manejar la información que descubres.</p>
+                </div>
+                
+                <div class="gameplay-card">
+                    <div class="gameplay-icon">📜</div>
+                    <h3>Vivir la Historia</h3>
+                    <p>Sumérgete en una narrativa cinematográfica con momentos de tensión, emoción y revelaciones impactantes.</p>
+                </div>
+            </div>
+            
+            <div class="gameplay-elements">
+                <h3>Elementos del Juego</h3>
+                <div class="elements-grid">
+                    <div class="element-card hazards">
+                        <div class="element-header">
+                            <span class="element-icon">⚠️</span>
+                            <h4>Hazards</h4>
+                        </div>
+                        <ul>
+                            <li>Zonas de melaza profunda</li>
+                            <li>Estructuras colapsando</li>
+                            <li>Cables eléctricos activos</li>
+                            <li>Fugas de gas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="element-card powerups">
+                        <div class="element-header">
+                            <span class="element-icon">✨</span>
+                            <h4>Power-ups</h4>
+                        </div>
+                        <ul>
+                            <li>Botas de tracción</li>
+                            <li>Linterna mejorada</li>
+                            <li>Kit de primeros auxilios</li>
+                            <li>Herramientas especiales</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="element-card collectibles">
+                        <div class="element-header">
+                            <span class="element-icon">💎</span>
+                            <h4>Coleccionables</h4>
+                        </div>
+                        <ul>
+                            <li>Fotos de recuerdos</li>
+                            <li>Diarios de vecinos</li>
+                            <li>Documentos corporativos</li>
+                            <li>Objetos de Tomi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PROGRESS SECTION (WEEKLY UPDATES)
+    ======================================== -->
+    <section class="section progress" id="progress">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Desarrollo</span>
+                <h2 class="section-title">Avances por Semanas</h2>
+                <p class="section-subtitle">Sigue el progreso de desarrollo de Molassault semana a semana</p>
+            </div>
+            
+            <div class="weeks-filter">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="concepto">Concepto</button>
+                <button class="filter-btn" data-filter="diseño">Diseño</button>
+                <button class="filter-btn" data-filter="desarrollo">Desarrollo</button>
+            </div>
+            
+            <div class="weeks-grid" id="weeksGrid">
+                <!-- Semana 1 -->
+                <div class="week-card" data-category="concepto">
+                    <div class="week-header">
+                        <div class="week-number">01</div>
+                        <div class="week-title-group">
+                            <h3>Concepto y Narrativa Base</h3>
+                            <span class="week-date">Semana 1</span>
+                        </div>
+                        <button class="week-toggle" aria-label="Expandir semana">
+                            <span class="toggle-icon"></span>
+                        </button>
+                    </div>
+                    <div class="week-content">
+                        <p class="week-description">Definición inicial del concepto del videojuego, estableciendo las bases narrativas y la premisa central de Molassault.</p>
+                        
+                        <div class="week-details">
+                            <div class="detail-group">
+                                <h4>Actividades Realizadas</h4>
+                                <ul>
+                                    <li>Brainstorming grupal sobre temáticas y géneros</li>
+                                    <li>Investigación sobre el desastre de melaza de Boston (1919)</li>
+                                    <li>Definición del protagonista y conflicto central</li>
+                                    <li>Creación del pitch inicial del proyecto</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Logros</h4>
+                                <ul class="achievements">
+                                    <li>Concepto del juego aprobado por el equipo</li>
+                                    <li>Historia base definida con inicio, nudo y desenlace</li>
+                                    <li>Nombre "Molassault" elegido (Molasses + Assault)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Retos Encontrados</h4>
+                                <ul class="challenges">
+                                    <li>Dificultad para balancear realismo histórico con ficción</li>
+                                    <li>Debate sobre el tono apropiado para la narrativa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Semana 2 -->
+                <div class="week-card" data-category="concepto">
+                    <div class="week-header">
+                        <div class="week-number">02</div>
+                        <div class="week-title-group">
+                            <h3>GDD y Referentes Visuales</h3>
+                            <span class="week-date">Semana 2</span>
+                        </div>
+                        <button class="week-toggle" aria-label="Expandir semana">
+                            <span class="toggle-icon"></span>
+                        </button>
+                    </div>
+                    <div class="week-content">
+                        <p class="week-description">Desarrollo del Game Design Document (GDD) inicial y recopilación de referencias visuales y jugables.</p>
+                        
+                        <div class="week-details">
+                            <div class="detail-group">
+                                <h4>Actividades Realizadas</h4>
+                                <ul>
+                                    <li>Redacción del GDD con mecánicas principales</li>
+                                    <li>Análisis de juegos referentes: Uncharted, TLOU, Tomb Raider</li>
+                                    <li>Creación de moodboards visuales</li>
+                                    <li>Definición de la paleta de colores preliminar</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Logros</h4>
+                                <ul class="achievements">
+                                    <li>GDD v1.0 completado (15 páginas)</li>
+                                    <li>Carpeta de referencias con +50 imágenes</li>
+                                    <li>Mecánicas core definidas y documentadas</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Retos Encontrados</h4>
+                                <ul class="challenges">
+                                    <li>Alcance inicial demasiado ambicioso, requirió recortes</li>
+                                    <li>Falta de experiencia en documentación formal de juegos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Semana 3 -->
+                <div class="week-card" data-category="diseño">
+                    <div class="week-header">
+                        <div class="week-number">03</div>
+                        <div class="week-title-group">
+                            <h3>Personajes y Mundo</h3>
+                            <span class="week-date">Semana 3</span>
+                        </div>
+                        <button class="week-toggle" aria-label="Expandir semana">
+                            <span class="toggle-icon"></span>
+                        </button>
+                    </div>
+                    <div class="week-content">
+                        <p class="week-description">Diseño detallado de los personajes principales y definición del worldbuilding de Molassault.</p>
+                        
+                        <div class="week-details">
+                            <div class="detail-group">
+                                <h4>Actividades Realizadas</h4>
+                                <ul>
+                                    <li>Fichas de personaje para Nico y Tomi</li>
+                                    <li>Backstory de personajes secundarios</li>
+                                    <li>Mapa conceptual del pueblo y sus distritos</li>
+                                    <li>Timeline del desastre y eventos previos</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Logros</h4>
+                                <ul class="achievements">
+                                    <li>Perfiles completos de 6 personajes</li>
+                                    <li>Lore del pueblo documentado</li>
+                                    <li>Relaciones entre personajes mapeadas</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Retos Encontrados</h4>
+                                <ul class="challenges">
+                                    <li>Crear personajes memorables sin caer en estereotipos</li>
+                                    <li>Balancear información del mundo sin exposition dumps</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Semana 4 -->
+                <div class="week-card" data-category="diseño">
+                    <div class="week-header">
+                        <div class="week-number">04</div>
+                        <div class="week-title-group">
+                            <h3>Bocetos de Niveles</h3>
+                            <span class="week-date">Semana 4</span>
+                        </div>
+                        <button class="week-toggle" aria-label="Expandir semana">
+                            <span class="toggle-icon"></span>
+                        </button>
+                    </div>
+                    <div class="week-content">
+                        <p class="week-description">Creación de bocetos y layouts para los niveles principales del juego, definiendo el flujo de gameplay.</p>
+                        
+                        <div class="week-details">
+                            <div class="detail-group">
+                                <h4>Actividades Realizadas</h4>
+                                <ul>
+                                    <li>Sketches de los 4 ambientes principales</li>
+                                    <li>Flowchart de progresión del jugador</li>
+                                    <li>Identificación de puntos de decisión narrativa</li>
+                                    <li>Ubicación de puzzles y coleccionables</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Logros</h4>
+                                <ul class="achievements">
+                                    <li>12 bocetos de niveles completados</li>
+                                    <li>Flujo de juego de 2-3 horas estimado</li>
+                                    <li>Sistema de checkpoints diseñado</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Retos Encontrados</h4>
+                                <ul class="challenges">
+                                    <li>Diseñar rutas alternativas sin perder cohesión narrativa</li>
+                                    <li>Equilibrar dificultad de parkour para diferentes jugadores</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Semana 5 -->
+                <div class="week-card" data-category="diseño">
+                    <div class="week-header">
+                        <div class="week-number">05</div>
+                        <div class="week-title-group">
+                            <h3>Paleta Visual e Interfaz</h3>
+                            <span class="week-date">Semana 5</span>
+                        </div>
+                        <button class="week-toggle" aria-label="Expandir semana">
+                            <span class="toggle-icon"></span>
+                        </button>
+                    </div>
+                    <div class="week-content">
+                        <p class="week-description">Definición de la identidad visual final y diseño de la interfaz de usuario del juego.</p>
+                        
+                        <div class="week-details">
+                            <div class="detail-group">
+                                <h4>Actividades Realizadas</h4>
+                                <ul>
+                                    <li>Paleta de colores final (verdes, azules, mostaza)</li>
+                                    <li>Tipografías para UI y títulos</li>
+                                    <li>Mockups de HUD minimalista</li>
+                                    <li>Diseño de menú principal y pausas</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Logros</h4>
+                                <ul class="achievements">
+                                    <li>Style guide visual completado</li>
+                                    <li>UI kit con todos los elementos necesarios</li>
+                                    <li>Iconografía personalizada creada</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Retos Encontrados</h4>
+                                <ul class="challenges">
+                                    <li>Crear UI que no distraiga de la inmersión</li>
+                                    <li>Asegurar legibilidad en diferentes escenarios de iluminación</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Semana 6 -->
+                <div class="week-card" data-category="desarrollo">
+                    <div class="week-header">
+                        <div class="week-number">06</div>
+                        <div class="week-title-group">
+                            <h3>Prototipo de Movimiento</h3>
+                            <span class="week-date">Semana 6</span>
+                        </div>
+                        <button class="week-toggle" aria-label="Expandir semana">
+                            <span class="toggle-icon"></span>
+                        </button>
+                    </div>
+                    <div class="week-content">
+                        <p class="week-description">Desarrollo del prototipo inicial con mecánicas de movimiento y exploración básica.</p>
+                        
+                        <div class="week-details">
+                            <div class="detail-group">
+                                <h4>Actividades Realizadas</h4>
+                                <ul>
+                                    <li>Configuración del proyecto en el motor de juego</li>
+                                    <li>Implementación de controles de personaje</li>
+                                    <li>Sistema de cámara en tercera persona</li>
+                                    <li>Greybox del primer nivel para pruebas</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Logros</h4>
+                                <ul class="achievements">
+                                    <li>Personaje jugable con movimiento fluido</li>
+                                    <li>Salto y escalada básica funcionando</li>
+                                    <li>Primera zona de prueba completada</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Retos Encontrados</h4>
+                                <ul class="challenges">
+                                    <li>Curva de aprendizaje del motor de juego</li>
+                                    <li>Problemas de colisiones en geometría compleja</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Semana 7 -->
+                <div class="week-card" data-category="desarrollo">
+                    <div class="week-header">
+                        <div class="week-number">07</div>
+                        <div class="week-title-group">
+                            <h3>Obstáculos y Progresión</h3>
+                            <span class="week-date">Semana 7</span>
+                        </div>
+                        <button class="week-toggle" aria-label="Expandir semana">
+                            <span class="toggle-icon"></span>
+                        </button>
+                    </div>
+                    <div class="week-content">
+                        <p class="week-description">Implementación de sistemas de obstáculos, hazards y mecánicas de progresión del jugador.</p>
+                        
+                        <div class="week-details">
+                            <div class="detail-group">
+                                <h4>Actividades Realizadas</h4>
+                                <ul>
+                                    <li>Sistema de zonas de daño (melaza)</li>
+                                    <li>Plataformas móviles e inestables</li>
+                                    <li>Sistema de checkpoints y respawn</li>
+                                    <li>Primer puzzle ambiental funcional</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Logros</h4>
+                                <ul class="achievements">
+                                    <li>5 tipos de obstáculos implementados</li>
+                                    <li>Sistema de vida y daño funcionando</li>
+                                    <li>Loop de gameplay básico completado</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Retos Encontrados</h4>
+                                <ul class="challenges">
+                                    <li>Balancear dificultad sin frustrar al jugador</li>
+                                    <li>Feedback visual claro para áreas de peligro</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Semana 8 -->
+                <div class="week-card" data-category="desarrollo">
+                    <div class="week-header">
+                        <div class="week-number">08</div>
+                        <div class="week-title-group">
+                            <h3>Integración Narrativa</h3>
+                            <span class="week-date">Semana 8</span>
+                        </div>
+                        <button class="week-toggle" aria-label="Expandir semana">
+                            <span class="toggle-icon"></span>
+                        </button>
+                    </div>
+                    <div class="week-content">
+                        <p class="week-description">Integración de elementos narrativos al prototipo y pulido general de la experiencia.</p>
+                        
+                        <div class="week-details">
+                            <div class="detail-group">
+                                <h4>Actividades Realizadas</h4>
+                                <ul>
+                                    <li>Sistema de diálogos y subtítulos</li>
+                                    <li>Coleccionables con lore del mundo</li>
+                                    <li>Triggers de eventos narrativos</li>
+                                    <li>Optimización y corrección de bugs</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Logros</h4>
+                                <ul class="achievements">
+                                    <li>Demo jugable de 10-15 minutos</li>
+                                    <li>Historia integrada en el gameplay</li>
+                                    <li>Primer playtest con feedback positivo</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4>Retos Encontrados</h4>
+                                <ul class="challenges">
+                                    <li>Sincronizar narrativa con ritmo de juego</li>
+                                    <li>Evitar interrupciones excesivas del gameplay</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PROJECT PROGRESS SECTION
+    ======================================== -->
+    <section class="section project-progress" id="projectProgress">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Estado</span>
+                <h2 class="section-title">Progreso General</h2>
+                <p class="section-subtitle">Visualiza el avance total del desarrollo de Molassault</p>
+            </div>
+            
+            <div class="progress-timeline">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="mainProgressBar"></div>
+                </div>
+                
+                <div class="progress-phases">
+                    <div class="phase completed" data-phase="1">
+                        <div class="phase-marker"></div>
+                        <div class="phase-info">
+                            <span class="phase-name">Idea</span>
+                            <span class="phase-status">Completado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="phase completed" data-phase="2">
+                        <div class="phase-marker"></div>
+                        <div class="phase-info">
+                            <span class="phase-name">Investigación</span>
+                            <span class="phase-status">Completado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="phase completed" data-phase="3">
+                        <div class="phase-marker"></div>
+                        <div class="phase-info">
+                            <span class="phase-name">GDD</span>
+                            <span class="phase-status">Completado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="phase completed" data-phase="4">
+                        <div class="phase-marker"></div>
+                        <div class="phase-info">
+                            <span class="phase-name">Arte Conceptual</span>
+                            <span class="phase-status">Completado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="phase active" data-phase="5">
+                        <div class="phase-marker"></div>
+                        <div class="phase-info">
+                            <span class="phase-name">Prototipo</span>
+                            <span class="phase-status">En Progreso</span>
+                        </div>
+                    </div>
+                    
+                    <div class="phase" data-phase="6">
+                        <div class="phase-marker"></div>
+                        <div class="phase-info">
+                            <span class="phase-name">Desarrollo</span>
+                            <span class="phase-status">Pendiente</span>
+                        </div>
+                    </div>
+                    
+                    <div class="phase" data-phase="7">
+                        <div class="phase-marker"></div>
+                        <div class="phase-info">
+                            <span class="phase-name">Pruebas</span>
+                            <span class="phase-status">Pendiente</span>
+                        </div>
+                    </div>
+                    
+                    <div class="phase" data-phase="8">
+                        <div class="phase-marker"></div>
+                        <div class="phase-info">
+                            <span class="phase-name">Entrega Final</span>
+                            <span class="phase-status">Pendiente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="progress-stats">
+                <div class="stat-card">
+                    <span class="stat-value" id="completedWeeks">8</span>
+                    <span class="stat-label">Semanas Completadas</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="progressPercent">62%</span>
+                    <span class="stat-label">Progreso Total</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="currentPhase">Prototipo</span>
+                    <span class="stat-label">Fase Actual</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         GALLERY SECTION
+    ======================================== -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Visual</span>
+                <h2 class="section-title">Galería Multimedia</h2>
+                <p class="section-subtitle">Concept art, bocetos, interfaces y avances visuales del desarrollo</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <div class="gallery-placeholder">
+                        <span>Concept Art - North End</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">North End District</span>
+                        <span class="gallery-type">Concept Art</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Nico - Character Design</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Nico</span>
+                        <span class="gallery-type">Character Design</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Tomi - Character Design</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Tomi</span>
+                        <span class="gallery-type">Character Design</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>UI Mockup - HUD</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">HUD Design</span>
+                        <span class="gallery-type">UI/UX</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Level Sketch - Factory</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Industrial Zone</span>
+                        <span class="gallery-type">Level Design</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item large">
+                    <div class="gallery-placeholder">
+                        <span>Environment - Rooftops</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Rooftop Routes</span>
+                        <span class="gallery-type">Environment Art</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Props - Collectibles</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Collectibles</span>
+                        <span class="gallery-type">Props</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>Screenshot - Prototype</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Prototype Build</span>
+                        <span class="gallery-type">Screenshot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TEAM SECTION
+    ======================================== -->
+    <section class="section team" id="team">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Créditos</span>
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <p class="section-subtitle">Los creativos detrás del desarrollo de Molassault</p>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-card team-card-santiago">
+                <div class="team-avatar team-avatar-santiago">
+                    <div class="avatar-placeholder">
+                        <img src="/img/mejillas.webp" alt="Santiago Mejía Suarez" class="team-img team-img-santiago">
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Santiago Mejía Suarez</h3>
+                    <span class="team-role">Game Designer</span>
+                    <span class="team-role">Narrative Designer</span>
+                    <p>Encargado del diseño de mecánicas, la estructura narrativa del juego y la dirección creativa general del proyecto.</p>
+                </div>
+            </div>
+            
+            <div class="team-card team-card-steven">
+                <div class="team-avatar team-avatar-steven">
+                    <div class="avatar-placeholder">
+                        <img src="/img/Steven.webp" alt="Steven Camilo Franco Bocanegra" class="team-img team-img-steven">
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Steven Camilo Franco Bocanegra</h3>
+                    <span class="team-role">Programmer</span>
+                    <span class="team-role">Art Director</span>
+                    <p>Responsable de la programación de sistemas del juego y de la dirección artística que define la identidad visual de Molassault.</p>
+                </div>
+            </div>
+            
+            <div class="team-card team-card-chantre">
+                <div class="team-avatar team-avatar-chantre">
+                    <div class="avatar-placeholder">
+                        <img src="/img/chantre.webp" alt="Jean Carlo Caicedo Chantre" class="team-img team-img-chantre">
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Jean Carlo Caicedo Chantre</h3>
+                    <span class="team-role">Programmer</span>
+                    <span class="team-role">QA Tester</span>
+                    <p>Encargado de apoyar la programación del juego y ejecutar pruebas de calidad para detectar errores, validar mecánicas y mejorar la experiencia del jugador.</p>
+                </div>
+            </div>
+            
+            <div class="team-card team-card-valentina">
+                <div class="team-avatar team-avatar-valentina">
+                    <div class="avatar-placeholder">
+                        <img src="/img/valentina.webp" alt="Valentina Ochoa Hernández" class="team-img team-img-valentina">
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Valentina Ochoa Hernández</h3>
+                    <span class="team-role">Programmer</span>
+                    <span class="team-role">Sound Designer</span>
+                    <p>Responsable del desarrollo de sistemas y mecánicas del juego, además del diseño sonoro que acompaña la experiencia de Molassault.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">MOLASSAULT</span>
+                    <p>Proyecto de desarrollo de videojuego narrativo creado como parte del programa académico universitario.</p>
+                </div>
+                
+                <div class="footer-info">
+                    <div class="footer-block">
+                        <h4>Proyecto</h4>
+                        <p>Desarrollo de Videojuegos</p>
+                        <p>Semestre 2026-1</p>
+                    </div>
+                    
+                    <div class="footer-block">
+                        <h4>Universidad</h4>
+                        <p>Facultad de Ingeniería</p>
+                        <p>Programa de Multimedia</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Molassault. Proyecto universitario con fines académicos.</p>
+                <p>Desarrollado con dedicación por Nebuly Studios.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
