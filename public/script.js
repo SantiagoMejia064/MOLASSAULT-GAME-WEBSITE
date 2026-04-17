@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initWeeksFilter();
     initProgressBar();
     initSmoothScroll();
+    initGalleryLightbox();
 });
 
 // ========================================
@@ -267,9 +268,9 @@ function initProgressBar() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Animate progress bar to 62% (current project progress)
+                // Animate progress bar to 69% (current project progress)
                 setTimeout(() => {
-                    progressBar.style.width = '62%';
+                    progressBar.style.width = '69%';
                 }, 300);
                 
                 // Animate stat numbers
@@ -292,11 +293,11 @@ function animateStats() {
     const progressPercent = document.getElementById('progressPercent');
 
     if (completedWeeks) {
-        animateValue(completedWeeks, 0, 8, 1500, '');
+        animateValue(completedWeeks, 0, 11, 1500, '');
     }
 
     if (progressPercent) {
-        animateValue(progressPercent, 0, 62, 1500, '%');
+        animateValue(progressPercent, 0, 69, 1500, '%');
     }
 }
 
@@ -369,16 +370,113 @@ function initParallax() {
 }
 
 // ========================================
-// GALLERY LIGHTBOX (FUTURE ENHANCEMENT)
+// GALLERY LIGHTBOX
 // ========================================
 function initGalleryLightbox() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    // Obtener elementos del DOM
+    const lightbox = document.getElementById('galleryLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxType = document.getElementById('lightboxType');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxNext = document.querySelector('.lightbox-next');
+    const lightboxPrev = document.querySelector('.lightbox-prev');
     
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            // Future: Open lightbox modal with full image
-            console.log('Gallery item clicked - lightbox would open here');
+    // Validar que existen los elementos
+    if (!lightbox || !lightboxImage) {
+        console.error('Lightbox elements not found');
+        return;
+    }
+    
+    let currentIndex = 0;
+    let images = [];
+
+    // Recolectar imágenes de la galería
+    document.querySelectorAll('.gallery-item .gallery-image').forEach((img) => {
+        images.push({
+            src: img.src,
+            alt: img.alt,
+            title: img.closest('.gallery-item').querySelector('.gallery-title')?.textContent || '',
+            type: img.closest('.gallery-item').querySelector('.gallery-type')?.textContent || ''
         });
+    });
+
+    console.log('Gallery images found:', images.length);
+
+    // Función para abrir el lightbox
+    function showLightbox(index) {
+        console.log('Opening lightbox at index:', index);
+        if (images.length === 0) return;
+        
+        currentIndex = Math.max(0, Math.min(index, images.length - 1));
+        lightboxImage.src = images[currentIndex].src;
+        lightboxImage.alt = images[currentIndex].alt;
+        if (lightboxTitle) lightboxTitle.textContent = images[currentIndex].title;
+        if (lightboxType) lightboxType.textContent = images[currentIndex].type;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Función para cerrar el lightbox
+    function hideLightbox() {
+        console.log('Closing lightbox');
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Agregar click listeners a cada imagen
+    document.querySelectorAll('.gallery-item .gallery-image').forEach((img, idx) => {
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Image clicked:', idx);
+            showLightbox(idx);
+        });
+    });
+
+    // Event listeners para los controles
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', hideLightbox);
+    }
+
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            lightboxImage.src = images[currentIndex].src;
+            lightboxImage.alt = images[currentIndex].alt;
+            if (lightboxTitle) lightboxTitle.textContent = images[currentIndex].title;
+            if (lightboxType) lightboxType.textContent = images[currentIndex].type;
+        });
+    }
+
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            lightboxImage.src = images[currentIndex].src;
+            lightboxImage.alt = images[currentIndex].alt;
+            if (lightboxTitle) lightboxTitle.textContent = images[currentIndex].title;
+            if (lightboxType) lightboxType.textContent = images[currentIndex].type;
+        });
+    }
+
+    // Cerrar al hacer click en el fondo
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            hideLightbox();
+        }
+    });
+
+    // Teclas del teclado
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+            hideLightbox();
+        } else if (e.key === 'ArrowRight') {
+            if (lightboxNext) lightboxNext.click();
+        } else if (e.key === 'ArrowLeft') {
+            if (lightboxPrev) lightboxPrev.click();
+        }
     });
 }
 
