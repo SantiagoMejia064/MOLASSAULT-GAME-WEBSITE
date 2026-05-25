@@ -268,9 +268,9 @@ function initProgressBar() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Animate progress bar to 69% (current project progress)
+                // Animate progress bar to 100% (current project progress)
                 setTimeout(() => {
-                    progressBar.style.width = '69%';
+                    progressBar.style.width = '100%';
                 }, 300);
                 
                 // Animate stat numbers
@@ -297,7 +297,7 @@ function animateStats() {
     }
 
     if (progressPercent) {
-        animateValue(progressPercent, 0, 69, 1500, '%');
+        animateValue(progressPercent, 0, 100, 1500, '%');
     }
 }
 
