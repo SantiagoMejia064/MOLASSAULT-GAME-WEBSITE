@@ -410,27 +410,92 @@
           </p>
         </div>
 
-        <div class="gameplay-video-container">
-          <div class="video-wrapper">
-            <iframe
-              width="100%"
-              height="600"
-              src="https://www.youtube.com/embed/bZh-Ptq02FE"
-              title="Molassault Teaser - Video de Gameplay"
-              frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share;
-              "
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            >
-            </iframe>
+        <!-- Carrusel horizontal de videos: la lista se duplica para lograr un desplazamiento infinito sin cortes. -->
+        <div class="gameplay-video-container" id="gameplayVideoCarousel" aria-label="Videos de gameplay de Molassault">
+          <div class="gameplay-video-track">
+            <button class="gameplay-video-card" type="button" data-video-id="bZh-Ptq02FE" data-video-title="Molassault Teaser - Video de Gameplay">
+              <span class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/bZh-Ptq02FE?autoplay=1&mute=1&controls=0&loop=1&playlist=bZh-Ptq02FE&playsinline=1&rel=0&modestbranding=1"
+                  title="Molassault Teaser - Video de Gameplay"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </span>
+            </button>
+
+            <button class="gameplay-video-card" type="button" data-video-id="3E9KqzJUvxE" data-video-title="Molassault Gameplay - Avance 2">
+              <span class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/3E9KqzJUvxE?autoplay=1&mute=1&controls=0&loop=1&playlist=3E9KqzJUvxE&playsinline=1&rel=0&modestbranding=1"
+                  title="Molassault Gameplay - Avance 2"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </span>
+            </button>
+
+            <button class="gameplay-video-card" type="button" data-video-id="KEIQ21K2PlU" data-video-title="Molassault Gameplay - Avance 3">
+              <span class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/KEIQ21K2PlU?autoplay=1&mute=1&controls=0&loop=1&playlist=KEIQ21K2PlU&playsinline=1&rel=0&modestbranding=1"
+                  title="Molassault Gameplay - Avance 3"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </span>
+            </button>
+
+            <button class="gameplay-video-card" type="button" data-video-id="bZh-Ptq02FE" data-video-title="Molassault Teaser - Video de Gameplay" aria-hidden="true" tabindex="-1">
+              <span class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/bZh-Ptq02FE?autoplay=1&mute=1&controls=0&loop=1&playlist=bZh-Ptq02FE&playsinline=1&rel=0&modestbranding=1"
+                  title="Molassault Teaser - Video de Gameplay"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </span>
+            </button>
+
+            <button class="gameplay-video-card" type="button" data-video-id="3E9KqzJUvxE" data-video-title="Molassault Gameplay - Avance 2" aria-hidden="true" tabindex="-1">
+              <span class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/3E9KqzJUvxE?autoplay=1&mute=1&controls=0&loop=1&playlist=3E9KqzJUvxE&playsinline=1&rel=0&modestbranding=1"
+                  title="Molassault Gameplay - Avance 2"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </span>
+            </button>
+
+            <button class="gameplay-video-card" type="button" data-video-id="KEIQ21K2PlU" data-video-title="Molassault Gameplay - Avance 3" aria-hidden="true" tabindex="-1">
+              <span class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/KEIQ21K2PlU?autoplay=1&mute=1&controls=0&loop=1&playlist=KEIQ21K2PlU&playsinline=1&rel=0&modestbranding=1"
+                  title="Molassault Gameplay - Avance 3"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </span>
+            </button>
           </div>
         </div>
 
@@ -1119,6 +1184,17 @@
         </div>
       </div>
     </section>
+
+    <!-- ========================================
+         GAMEPLAY VIDEO OVERLAY
+    ======================================== -->
+    <div class="gameplay-video-modal" id="gameplayVideoModal" aria-hidden="true">
+      <div class="gameplay-video-modal-content" role="dialog" aria-modal="true" aria-label="Reproductor de video de gameplay">
+        <button class="gameplay-video-close" id="gameplayVideoClose" type="button" aria-label="Cerrar video">&times;</button>
+        <!-- El iframe se carga bajo demanda para activar sonido y controles solo en el overlay. -->
+        <div class="gameplay-video-modal-frame" id="gameplayVideoModalFrame"></div>
+      </div>
+    </div>
 
     <!-- ========================================
          PROJECT PROGRESS SECTION

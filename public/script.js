@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initWeeksFilter();
     initProgressBar();
     initSmoothScroll();
+    initGameplayVideoModal();
     initGalleryLightbox();
 });
 
@@ -350,6 +351,66 @@ function initSmoothScroll() {
                 });
             }
         });
+    });
+}
+
+// ========================================
+// GAMEPLAY VIDEO CAROUSEL OVERLAY
+// ========================================
+function initGameplayVideoModal() {
+    const videoCards = document.querySelectorAll('.gameplay-video-card');
+    const modal = document.getElementById('gameplayVideoModal');
+    const modalFrame = document.getElementById('gameplayVideoModalFrame');
+    const closeButton = document.getElementById('gameplayVideoClose');
+
+    if (!videoCards.length || !modal || !modalFrame || !closeButton) return;
+
+    // Construye el iframe del overlay bajo demanda para evitar cargar players pesados hasta que el usuario haga click.
+    function createOverlayIframe(videoId, title) {
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&controls=1&playsinline=1&rel=0&modestbranding=1`;
+        iframe.title = title;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        return iframe;
+    }
+
+    // Abre el modal con sonido activo y controles completos.
+    function openVideoModal(videoId, title) {
+        modalFrame.replaceChildren(createOverlayIframe(videoId, title));
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeButton.focus();
+    }
+
+    // Cierra el modal y remueve el iframe para detener audio y reproduccion.
+    function closeVideoModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        modalFrame.replaceChildren();
+        document.body.style.overflow = 'auto';
+    }
+
+    videoCards.forEach(card => {
+        card.addEventListener('click', () => {
+            openVideoModal(card.dataset.videoId, card.dataset.videoTitle);
+        });
+    });
+
+    closeButton.addEventListener('click', closeVideoModal);
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeVideoModal();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('active')) {
+            closeVideoModal();
+        }
     });
 }
 
